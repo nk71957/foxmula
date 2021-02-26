@@ -1,0 +1,108 @@
+// ==========  Interactive Search  ========== //
+
+.interactive-wrapper {
+  position: static;
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: row;
+  align-items: inherit;
+  height: 100%;
+
+  &--edit {
+    display: none;
+  }
+}
+
+.interactive {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
+  width: 100%;
+  height: var(--interactive-height);
+  margin: 0;
+  overflow-y: hidden;
+  padding: var(--interactive-padding-y) var(--interactive-padding-x);
+  font-size: var(--interactive-font-size);
+  font-weight: 400;
+  color: rgba(0,0,0,.54);
+  background-color: #eee;
+  border-bottom: none;
+  border-radius: 20px;
+
+  &__icon {
+    margin-right: 12px;
+    margin-left: 8px;
+    color: var(--color-app-text-secondary);
+    cursor: pointer;
+    outline: 0 none;
+  }
+
+  &__placeholder {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &--toggle {
+      cursor: pointer;
+      outline: 0;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-self: flex-end;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0 44px 0 60px;
+    font-size: var(--interactive-font-size);
+    font-weight: 400;
+    line-height: 1.75rem;
+    color: var(--color-app-text);
+    text-decoration: inherit;
+    text-transform: inherit;
+    letter-spacing: 0.009375em;
+    cursor: pointer;
+    background: none;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    transition: all 0.15s ease;
+    transition-property: border-color;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &--focused {
+    z-index: 5;
+    background-color: var(--color-app-card-background);
+    box-shadow: var(--elevation-z2);
+
+    .interactive-wrapper--show {
+      display: none;
+    }
+
+    .interactive-wrapper--edit {
+      display: flex;
+    }
+
+    .interactive__input {
+      cursor: auto;
+    }
+  }
+
+  &--dirty {
+    .interactive__placeholder {
+      visibility: hidden;
+    }
+  }
+}

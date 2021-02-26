@@ -1,0 +1,118 @@
+// ==========  Batch Card   ========== //
+
+.batch-card {
+  position: relative;
+  padding: 16px;
+  width: 100%;
+  z-index: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--card-font-size);
+  font-weight: 400;
+  background: #fff;
+  border-radius: var(--card-border-radius);
+  border: 1px solid rgba(0,0,0,.12);
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  &__subject {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  &__subject-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.54);
+    color: #fff;
+    margin-right: 8px;
+    .material-icons {
+      font-size: 18px;
+    }
+  }
+
+  &__subject-title {
+    font-size: 14px;
+    flex-grow: 1;
+  }
+
+  &__meta-text {
+    color: rgba(0,0,0,.7);
+    font-size: 12px;
+    padding-left: 44px;
+  }
+
+  &__meta-paragraph {
+    margin-bottom: 4px;
+  }
+
+  &__meta-text-highlight {
+    font-weight: 500;
+    color: rgba(0,0,0,.84);
+  }
+
+  &__weeks {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    padding-left: 44px;
+    .badge {
+      width: 32px;
+      height: 32px;
+      margin-left: 4px;
+      background-color: rgba(0,0,0,.12);
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    .batch-card__week-active {
+      background-color: #52B0CA;
+      color: #fff;
+    }
+  }
+
+  &__notification {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FF4330;
+    color: #fff;
+    transform: translate(50%, -50%);
+  }
+}
+.batch-card-wrapper {
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: repeat(3, auto);
+  @media (max-width: 1200px) {
+    grid-gap: 24px;
+    grid-template-columns: repeat(2, auto);
+  }
+  @media (max-width: 768px) {
+    grid-gap: 16px;
+    grid-template-columns: repeat(1, auto);
+  }
+}
+.batch-card-show-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0;
+}

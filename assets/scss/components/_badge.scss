@@ -1,0 +1,33 @@
+// ==========  Badges  ========== //
+
+.badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--badge-padding-y) var(--badge-padding-x);
+  font-size: var(--badge-font-size);
+  font-weight: var(--badge-font-weight);
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border-radius: var(--badge-border-radius);
+
+  &:empty {
+    display: none;
+  }
+
+  &--round {
+    min-width: 22px;
+    min-height: 22px;
+    border-radius: 50%;
+  }
+
+  &--success {
+    background: #62DF78;
+    color: #fff;
+  }
+
+}
